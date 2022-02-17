@@ -3,7 +3,7 @@ import ReactToPrint from "react-to-print";
 import { ArrowDown } from "react-feather";
 
 import Editor from "../Editor/Editor";
-// import Resume from "../Resume/Resume";
+import Resume from "../Resume/Resume";
 
 import styles from "./Body.module.css";
 
@@ -44,7 +44,7 @@ function Body() {
     [sections.skill]: {
       id: sections.skill,
       sectionTitle: sections.skill,
-      details: [],
+      detail: {},
     },
     [sections.education]: {
       id: sections.education,
@@ -101,12 +101,12 @@ function Body() {
           information={resumeInformation}
           setInformation={setResumeInformation}
         />
-        {/* <Resume
+        <Resume
           ref={resumeRef}
           sections={sections}
           information={resumeInformation}
           activeColor={activeColor}
-        /> */}
+        />
       </div>
     </div>
   );

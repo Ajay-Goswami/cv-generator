@@ -45,7 +45,7 @@ function Editor(props) {
       <div className={styles.row}>
         <InputControl
           label="Name"
-          placeholder="Enter your full name eg. Aashu"
+          placeholder="Enter your full name eg. Ajay Goswami"
           value={values.name}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, name: event.target.value }))
@@ -254,25 +254,27 @@ function Editor(props) {
           value={values.language}
           placeholder="Enter languages eg. C, C++, Python, Java"
           onChange={(event) =>
-            setValues((prev) => ({ ...prev, title: event.target.value }))
+            setValues((prev) => ({ ...prev, language: event.target.value }))
           }
         />
       </div>
-      <InputControl
-        label="Tools"
-        value={values.tools}
-        placeholder="Enter tools eg. VsCode, Vim Editor"
-        onChange={(event) =>
-          setValues((prev) => ({ ...prev, overview: event.target.value }))
-        }
-      />
+      <div className={styles.row}>
+        <InputControl
+          label="Tools"
+          value={values.tools}
+          placeholder="Enter tools eg. VsCode, Vim Editor"
+          onChange={(event) =>
+            setValues((prev) => ({ ...prev, tools: event.target.value }))
+          }
+        />
+      </div>
       <div className={styles.row}>
         <InputControl
           label="Operating System"
           value={values.operatingSystem}
           placeholder="Enter OS eg. Kali, Windows, Mac, Ubantu"
           onChange={(event) =>
-            setValues((prev) => ({ ...prev, title: event.target.value }))
+            setValues((prev) => ({ ...prev, operatingSystem: event.target.value }))
           }
         />
       </div>
@@ -282,7 +284,7 @@ function Editor(props) {
           value={values.softwarePackages}
           placeholder="Enter Packages eg. Microsoft Office, Anaconda"
           onChange={(event) =>
-            setValues((prev) => ({ ...prev, title: event.target.value }))
+            setValues((prev) => ({ ...prev, softwarePackages: event.target.value }))
           }
         />
       </div>
@@ -475,12 +477,14 @@ function Editor(props) {
         break;
       }
       case sections.skill: {
-        const tempDetail  = {
+        const tempDetail = {
           language: values.language,
           tools: values.tools,
           operatingSystem: values.operatingSystem,
           softwarePackages: values.softwarePackages,
         };
+        const tempDetails = [...information[sections.skill]?.details];
+        tempDetails[activeDetailIndex] = tempDetail;
 
         props.setInformation((prev) => ({
           ...prev,
@@ -615,6 +619,10 @@ function Editor(props) {
         ? activeInfo.details[0]?.startDate || ""
         : "",
       endDate: activeInfo?.details ? activeInfo.details[0]?.endDate || "" : "",
+      language: activeInfo?.details ?.language || "",
+      tools: activeInfo?.details ?.tools || "",
+      operatingSystem: activeInfo?.details ?.operatingSystem || "",
+      softwarePackages: activeInfo?.details ?.softwarePackages || "",
       points: activeInfo?.details
         ? activeInfo.details[0]?.points
           ? [...activeInfo.details[0]?.points]
@@ -654,6 +662,10 @@ function Editor(props) {
       location: activeInfo.details[activeDetailIndex]?.location || "",
       startDate: activeInfo.details[activeDetailIndex]?.startDate || "",
       endDate: activeInfo.details[activeDetailIndex]?.endDate || "",
+      language: activeInfo?.details[activeDetailIndex]?.language || "",
+      tools: activeInfo?.details[activeDetailIndex]?.tools || "",
+      operatingSystem: activeInfo?.details[activeDetailIndex]?.operatingSystem || "",
+      softwarePackages: activeInfo?.details[activeDetailIndex]?.softwarePackages || "",
       points: activeInfo.details[activeDetailIndex]?.points || "",
       title: activeInfo.details[activeDetailIndex]?.title || "",
       linkedin: activeInfo.details[activeDetailIndex]?.linkedin || "",

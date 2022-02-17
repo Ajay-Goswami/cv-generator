@@ -29,3 +29,21 @@
 .right img{
     width: 400px;
 }
+
+@media (max-width:800px)
+{
+    .container .heading{
+        font-size: 1.5rem;
+    }
+
+    .heading{
+        width: 70%;
+    }
+
+    .right{
+        width: 30%;
+    }
+    .right img{
+        width:100px;
+    }
+}

@@ -1,0 +1,41 @@
+.header{
+    background-color: rgb(50, 143, 96);
+    float:none;
+    overflow: hidden;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+}
+.header__logo{
+    color: white;
+    font-size: 40px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin:auto;
+    font-weight: bold;
+    margin :10px;
+    vertical-align: middle;
+    padding: 50px;
+}
+
+
+
+.header__right {
+    float: right;
+}
+.header__right a{
+    float: left;
+    color: white;
+    padding: 10px;
+    background-color: orangered;
+    margin: 10px;
+    list-style-type: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.header__right a:hover{
+    background-color: red;
+}
