@@ -8,19 +8,23 @@ import Editor from "../Editor/Editor";
 import styles from "./Body.module.css";
 
 function Body() {
-  const colors = ["#239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936"];
+  const colors = ["#239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936", "#051fd2"];
+  
   const sections = {
     basicInfo: "Basic Info",
     workExp: "Work Experience",
     project: "Projects",
+    skill:"Skills",
     education: "Education",
     achievement: "Achievements",
     summary: "Summary",
     other: "Other",
   };
-  const resumeRef = useRef();
 
+  const resumeRef = useRef();
+  
   const [activeColor, setActiveColor] = useState(colors[0]);
+  
   const [resumeInformation, setResumeInformation] = useState({
     [sections.basicInfo]: {
       id: sections.basicInfo,
@@ -35,6 +39,11 @@ function Body() {
     [sections.project]: {
       id: sections.project,
       sectionTitle: sections.project,
+      details: [],
+    },
+    [sections.skill]: {
+      id: sections.skill,
+      sectionTitle: sections.skill,
       details: [],
     },
     [sections.education]: {
@@ -61,7 +70,7 @@ function Body() {
 
   return (
     <div className={styles.container}>
-      <p className={styles.heading}>Resume Builder</p>
+      <p className={styles.heading}><span>Resume Builder</span></p>
       <div className={styles.toolbar}>
         <div className={styles.colors}>
           {colors.map((item) => (
@@ -92,10 +101,27 @@ function Body() {
           information={resumeInformation}
           setInformation={setResumeInformation}
         />
-        
+        {/* <Resume
+          ref={resumeRef}
+          sections={sections}
+          information={resumeInformation}
+          activeColor={activeColor}
+        /> */}
       </div>
     </div>
   );
 }
 
 export default Body;
+
+
+
+
+
+
+
+ 
+
+
+
+

@@ -8,16 +8,16 @@ function Header() {
 
       <div className={styles.left}>
         <p className={styles.heading}>
-            A <span>Resume </span>that stands out!
+          A <span>Resume </span>that stands out!
         </p>
         <p className={styles.heading}>
-            Make your own Resume. <span>It's free</span>
+          Make your own Resume. <span>It's free</span>
         </p>
-        </div>
+      </div>
 
-        <div className={styles.right}>
-          <img src={resumeSvg} alt="Resume" />
-        </div>
+      <div className={styles.right}>
+        <img src={resumeSvg} alt="Resume" />
+      </div>
 
     </div>
   )

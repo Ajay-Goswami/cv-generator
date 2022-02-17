@@ -1,5 +1,5 @@
 .container{
-    padding: 50px 30px;
+    /* padding: 50px 30px; */
     text-align: center;
     width: 100%;
     display: flex;
@@ -22,7 +22,7 @@
 
 .heading span{
     background-clip: text;
-    background-image: linear-gradient(to right, #239ce2, #1369b9);
+    background-image: linear-gradient(to right, #239ce2, #052d53);
     color: transparent;
 }
 
