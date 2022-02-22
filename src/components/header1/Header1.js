@@ -1,8 +1,8 @@
 import React from "react";
-import styles from './Header.module.css';
+import styles from './Header1.module.css';
 import resumeSvg from '../../assets/resume.svg';
 
-function Header() {
+function Header1() {
   return (
     <div className={styles.container}>
 
@@ -23,4 +23,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header1

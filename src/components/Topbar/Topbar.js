@@ -1,16 +1,21 @@
 import './Topbar.css'
-const Header = () => {
+import { Link } from 'react-router-dom'
+import {BrowserRouter as Router} from "react-router-dom";
+const Faskdjf = () => {
     return (
-        <div className="header">
-            <a className='header__logo'>CV GENERATOR</a>
-            <div className="header__right">
-                <a href="#home">HOME</a>
-                <a href="#services">SERVICES</a>
-                <a href="#contact">CONTACT</a>
-                <a href="#about">ABOUT</a>
+        <Router>
+
+        <div className="Faskdjf">
+            <a className='Faskdjf__logo'>CV GENERATOR</a>
+            <div className="Faskdjf__right">
+                <Link to="#home">HOME</Link>
+                <Link to="#services">SERVICES</Link>
+                <Link to="#contact">CONTACT</Link>
+                <Link to="#about">ABOUT</Link>
             </div>
         </div>
+        </Router>
     )
 }
 
-export default Header
+export default Faskdjf
