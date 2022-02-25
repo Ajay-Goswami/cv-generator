@@ -64,7 +64,7 @@ function Body() {
 
   return (
     <div className={styles.container}>
-      <p className={styles.heading}><span>Resume Builder</span></p>
+      <p className={styles.heading}><span>CV-Generator</span> / <span>Resume Builder</span></p>
       <div className={styles.toolbar}>
         <div className={styles.colors}>
           {colors.map((item) => (
