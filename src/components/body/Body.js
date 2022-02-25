@@ -14,7 +14,6 @@ function Body() {
     basicInfo: "Basic Info",
     workExp: "Work Experience",
     project: "Projects",
-    skill:"Skills",
     education: "Education",
     achievement: "Achievements",
     summary: "Summary",
@@ -40,11 +39,6 @@ function Body() {
       id: sections.project,
       sectionTitle: sections.project,
       details: [],
-    },
-    [sections.skill]: {
-      id: sections.skill,
-      sectionTitle: sections.skill,
-      detail: {},
     },
     [sections.education]: {
       id: sections.education,

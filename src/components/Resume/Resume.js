@@ -23,7 +23,6 @@ const Resume = forwardRef((props, ref) => {
   const info = {
     workExp: information[sections.workExp],
     project: information[sections.project],
-    skill: information[sections.skill],
     achievement: information[sections.achievement],
     education: information[sections.education],
     basicInfo: information[sections.basicInfo],
@@ -156,46 +155,7 @@ const Resume = forwardRef((props, ref) => {
         </div>
       </div>
     ),
-   
-    [sections.skill]: (
-      <div
-        key={"skill"}
-        draggable
-        onDragOver={() => seTarget(info.skill?.id)}
-        onDragEnd={() => setSource(info.skill?.id)}
-        className={`${styles.section} ${info.skill?.sectionTitle ? "" : styles.hidden
-          }`}
-      >
         
-        <div className={styles.sectionTitle}>{info.skill?.sectionTitle}</div>
-        <div className={styles.content}>
-          {info.education?.details?.map((item) => (
-            <div className={styles.item}>
-              {item.language ? (
-                <p className={styles.overview}>{item.language}</p>
-              ) : (
-                <span />
-              )}
-              {item.tools ? (
-                <p className={styles.tools}>{item.tools}</p>
-              ) : (
-                <span />
-              )}
-              {item.operatingSystem ? (
-                <p className={styles.operatingSystem}>{item.operatingSystem}</p>
-              ) : (
-                <span />
-              )}
-              {item.softwarePackages ? (
-                <p className={styles.softwarePackages}>{item.softwarePackages}</p>
-              ) : (
-                <span />
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    ),
     [sections.education]: (
       <div
         key={"education"}
@@ -322,7 +282,7 @@ const Resume = forwardRef((props, ref) => {
 
   useEffect(() => {
     setColumns([
-      [sections.project, sections.skill, sections.education, sections.summary],
+      [sections.project, sections.education, sections.summary],
       [sections.workExp, sections.achievement, sections.other],
     ]);
   }, []);
